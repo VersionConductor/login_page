@@ -1,0 +1,97 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 16pt;
+}
+
+body {
+    min-height: 100vh;
+    background: rgb(231, 229, 229);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login {
+    width: 400px;
+    background: white;
+    box-shadow: inset 0px 0px 5px 8px rgba(0, 0, 0, 0.1),
+                inset -0px -0px 5px 1px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.login-head {
+    text-align: center;
+    font-size: 1.25em;
+    margin-bottom: 20px;
+}
+
+.login-form :not(:is(.loginButton)) {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.login-form .form-control {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.login-form .groups {
+    width: 40%;
+    line-height: 1.5;
+}
+.login-form input[type="text"], input[type="password"] {
+    padding: 8px;
+    flex: 1;
+    outline: none;
+    border: 2px solid #eee;
+    border-radius: 3px;
+    color: #38bd4e;
+}
+
+.login-form input[type="text"]:focus, input[type="password"]:focus {
+    box-shadow: 0 0 5px 1px rgba(19, 128, 201, 0.8),
+                0 0 7px 1px rgba(19, 128, 201, 0.8);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+}
+
+.loginButton {
+    padding: .4rem .6rem;
+    border: none;
+    outline: none;
+    width: max(60px, 3em);
+    margin-right: auto;
+    cursor: pointer;
+    border-radius: 3px;
+    background: blue;
+    color: #ffff;
+}
+
+.loginButton:hover {
+    background: #637499;
+    transition: cubic-bezier(0.215, 0.610, 0.355, 1) 0.3s;
+}
+
+#error-message, #success-message, #loding {
+    display: none;
+    --message-bg-color: #ff0000;
+    text-align: center;
+    font-size: 18px;
+    color: var(--message-bg-color);
+    font-family: monospace;
+    padding: 3px;
+}
+
+#success-message {
+    --message-bg-color: #00ff2a;
+}
+#loding {
+    --message-bg-color: #9c72a5;
+}
